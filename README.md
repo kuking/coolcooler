@@ -53,6 +53,37 @@ Unfortunately, I haven't documented the circuit in detail, but if you ask I can 
 
 Pending, Bugs, etc.
 -------------------
-- Pictures
-- Be better at estimation of real voltage of the battery (i.e. when the thermocouple is active, the voltage drops below the safety threshold, therefore the thermocouple is disengaged by the low-battery-protection, this makes the voltage to raise, and start the thermocouple again... it should have a delay of a few minutes to let the battery recover... or at to least fluctuate less frequently). I haven't researched much this, but it can be due a not very thick cable lead (generating a voltage drop) and I was also using a low-amp battery for testing (7Amps, given the Thermocouple draws 3A ... probably this might not happen with a car battery, needs to be investigated)
+- Do a better job at estimating the battery's real voltage (i.e. when the thermocouple is active, the voltage drops below the safety threshold, therefore the thermocouple is disengaged by the low-battery-protection, this makes the voltage to raise back, and this subsequently start the thermocouple again... infinite loop! It should have a delay of a few minutes to let the battery recover... or at to least fluctuate less frequently). I haven't researched this much, but it can be due a not very thick cable lead (generating a voltage drop) and I was also using a low-amp battery for testing (7A gel battery; given the Thermocouple draws 3A ... probably this might not happen with a car battery, needs to be investigated)
 - PCB Layouts
+
+Pics
+====
+
+The End Result
+--------------
+![Running](coolcooler-running.webp)
+
+ta-da
+
+The Cover, internal side
+------------------------
+
+![Cover](coolcooler-cover.webp)
+
+The side that goes inside the coolbox. In the picture you can see three components, the LED strip (down, center), the door sensor (down, center) and the DHT22 temperature and humidity sensor (down, right).
+
+Display Close-up
+----------------
+![Display Close-up](coolcooler-display.webp)
+
+Internal temperature and humidity, external temperature, voltage and only the fan is running now.
+Yes, old school so it looks like the coolbox.
+
+Guts
+----
+![Guts](coolcooler-guts.webp)
+
+In this picture you can see 3 main circuits, from left to right:
+- LCD and buttons
+- Low voltage logic board with arduino and wiring to sensors
+- High voltage with relays, power transistor for the LED strip and power conversors and protectors.
