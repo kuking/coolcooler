@@ -1,3 +1,5 @@
 # CoolCooler
 
-Write documentation here and add pictures.
+Get a cheap 12V cooler and pimp it cooler with this project. Features:
+- Low Battery Protection
+- Duty cycle programming
