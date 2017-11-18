@@ -2,6 +2,8 @@
 
 Get a cheap 12V cooler and pimp it with this Arduino project. 
 
+![Running](coolcooler-running.webp)
+
 Features:
 
 - Low Battery Protection
@@ -58,12 +60,6 @@ Pending, Bugs, etc.
 
 Pics
 ====
-
-The End Result
---------------
-![Running](coolcooler-running.webp)
-
-ta-da
 
 The Cover, internal side
 ------------------------
