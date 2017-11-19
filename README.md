@@ -4,13 +4,13 @@ Get a cheap 12V cooler and pimp it with this Arduino project.
 
 ![Running](coolcooler-running.webp)
 
-Features:
+__Features:__
 
-- Low Battery Protection
-- Configurable Duty cycle
-- Internal/External temperature monitoring
+- Low Battery Protection (so you dont kill your car's battery when you leave it plugged)
+- Configurable Duty cycle (so it does not run non-stop)
+- Internal/External temperature monitoring (so it stop cooling when is cool)
 - LED light door (with soft fading)
-- LCD 16x2 ([Hitachi style](https://en.wikipedia.org/wiki/Hitachi_HD44780_LCD_controller)) with internal and external temperature and simple two buttons menu for configuration. Anything more fancy would not match the cheap aesthetics.
+- LCD 16x2 ([Hitachi style](https://en.wikipedia.org/wiki/Hitachi_HD44780_LCD_controller)) with a mini menu for configuration using two buttons. Simple LCD matching the cheap aesthetics.
 
 Low Battery protection
 ----------------------
