@@ -38,11 +38,11 @@ Picture below; diagram someday if somebody asks. The main components:
 - Arduino Nano
 - DC-DC regulator to lower the 12V (and maybe up to 15V) battery's voltage to a stable 5.5V, used to drive the arduino and the relays. 
 - Input has a 18V zener diode and a normal diode for reverse polarity protection. The zener diode is for protection on any voltage spike i.e. modern generators that might put more than 30V at spikes, and the reverse polarity diode for protecting for voltage inversion after the ignition-engine stops, and also any inversed polarity that might happen by mistake.
-- A module with two opto-isolated relay: thermocouple and fan.
+- A module with two opto-isolated relays: thermocouple and fan.
 - Hitachi HD44780 LCD 16x2 drived by a SPI interface.
-- 2 Buttons, given there were enough pins available, no need to do any fancy stuff.
+- 2 Buttons measured by 2 digital inputs in INPUT_PULL_UP mode; given there were enough pins available, it was not needed to do any fancy stuff.
 - Internal DHT22 for temperature and humidity monitoring.
-- External classic one wire DS18D20.
+- External classic one wire DS18D20 thermometer.
 - Door sensors (for internal light).
 - LCD light run via PWM pin driving a TIP31C high power transistor.
 - A voltage divider to measure the battery voltage.
@@ -52,7 +52,7 @@ I decided to split the circuits in three boards:
 - "Low voltage" PCB with Arduino, sensors and logic.
 - "High voltage" PCB with relays, 12V Power transitor, DC-DC step down circuit, etc.
 
-Unfortunately, I haven't documented the circuit in detail, but if you ask I can improve it. It is not dificult, just by looking at the code you can see the pins for each device; the voltage divider can be configured in two `#define` by specifying the resistors you picked; there is no complicated external circuit, only the wiring in/out from the Arduino nano.
+Unfortunately, I haven't documented the circuit in detail, but if you ask I can make the effort. It is not dificult, just by looking at the code you can see the pins for each device; the voltage divider can be configured in two `#define` by specifying the resistors you picked; there is no complicated external circuit, only the wiring in/out from the Arduino nano.
 
 Pending, Bugs, etc.
 -------------------
