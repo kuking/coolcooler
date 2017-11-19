@@ -14,44 +14,45 @@ Features:
 
 Low Battery protection
 ----------------------
-Can be choosen between:
+It can be choosen between:
 - **Always On**
-- **12.5V "Battery Ok"**: So battery will not fully discharg
-- **13.0V "Safe Start"**: A battery in good contion would be able to start with this voltage.
-- **13.8V "Engine On"**: Battery voltage stays at 13.8v under load when it is actively being charged by the engine.
+- **12.5V "Battery Ok"**: So battery will not fully discharge.
+- **13.0V "Safe Start"**: A good battery should start a car if it has at least 13V.
+- **13.8V "Engine On"**: Battery voltage stays above 13.8v under load when it is being charged by the engine's generator.
 
-NOTE: Voltages will vary depending on the car, generator, etc. These are failr estimations.
+__NOTE__: Voltages will vary depending on the car, generator, leads thickness, etc. These are estimations.
 
 Configurable Duty Cycle
 -----------------------
 - **Target 5C**: Runs until internal temperature drops below 5C.
-- **Target 8C**: same but for 8C.
+- **Target 8C**: same but 8C.
 - **25% Couple, 50% Fan**: Runs a cycle of approx. 10 minutes, the thermocouple is active 25% of the time, and the fan 50%.
-- **50% Couple, 75% Fan**: like previous.
-- **75% Couple, 100% Fan**: like previous too.
+- **50% Couple, 75% Fan**: like previous but 50% / 75%.
+- **75% Couple, 100% Fan**: like previous but 75% / 100%.
 - **Always On**: like its basic functionality.
 - **Eco**: Targets to be under 10C but runs more if internal temperature is too far of it.
 
 Circuit
 -------
-(Picture here) Diagram someday if somebody asks. The main components:
+Picture below; diagram someday if somebody asks. The main components:
 - Arduino Nano
-- DC-DC regulator to lower the 12V battery to 5.5V, used to drive the arduino and the relays. It has a 18V zener diode and a normal diode for reverse polarity protection. The zener diode is for protection on any voltage spike i.e. after ignition.
-- Opto-isolated two relay module: thermocouple and fan.
-- LCD 16x2 drived by SPI interface.
-- 2 Buttons, given there were enough pins available, no need to do it with resistors.
+- DC-DC regulator to lower the 12V (and maybe up to 15V) battery's voltage to a stable 5.5V, used to drive the arduino and the relays. 
+- Input has a 18V zener diode and a normal diode for reverse polarity protection. The zener diode is for protection on any voltage spike i.e. modern generators that might put more than 30V at spikes, and the reverse polarity diode for protecting for voltage inversion after the ignition-engine stops.
+- A module with two ppto-isolated relay: thermocouple and fan.
+- Hitachi HD44780 LCD 16x2 drived by a SPI interface.
+- 2 Buttons, given there were enough pins available, no need to do any fancy stuff.
 - Internal DHT22 for temperature and humidity monitoring.
 - External classic one wire DS18D20.
 - Door sensors (for internal light).
-- LCD light run via PWM and a TIP31C.
+- LCD light run via PWM pin driving a TIP31C high power transistor.
 - A voltage divider to measure the battery voltage.
 
 I decided to split the circuits in three boards:
-- LCD and buttons with a ribbon cable so it is easy to remove.
+- LCD and buttons with a ribbon cable so it is easy to remove and leave it attached to the top-cover.
 - "Low voltage" circuit with Arduino, sensors and logic.
 - "High voltage" circuit with relays, 12V Power transitor, DC-DC step down circuit, etc.
 
-Unfortunately, I haven't documented the circuit in detail, but if you ask I can go in details. It is not dificult, just by looking at the code you can see the pins for each device and, i.e. in the voltage divider you can configure the two resistors you picked for your project;here is no complicated circuit, only wiring into/out of the Arduino nano.
+Unfortunately, I haven't documented the circuit in detail, but if you ask I can improve it. It is not dificult, just by looking at the code you can see the pins for each device; the voltage divider can be configured in two `#define` by specifying the resistors you picked; there is no complicated circuit 'external', only wiring in/out from the Arduino nano.
 
 Pending, Bugs, etc.
 -------------------
