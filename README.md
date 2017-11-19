@@ -2,7 +2,7 @@
 
 Get a cheap 12V cooler and pimp it with this Arduino project. 
 
-![Running](coolcooler-running.webp)
+![Running](coolcooler-running.jpg)
 
 __Features:__
 
@@ -65,20 +65,20 @@ Pics
 The Cover, internal side
 ------------------------
 
-![Cover](coolcooler-cover.webp)
+![Cover](coolcooler-cover.jpg)
 
 The side that goes inside the coolbox. In the picture you can see three components, the LED strip (down, center), the door sensor (down, center) and the DHT22 temperature and humidity sensor (down, right). The black tape was temporary to keep the led strip in place while the glue was drying.
 
 Display Close-up
 ----------------
-![Display Close-up](coolcooler-display.webp)
+![Display Close-up](coolcooler-display.jpg)
 
 Internal temperature and humidity, external temperature, voltage and only the fan is running now.
 Yes, old school so it looks like the coolbox.
 
 Guts
 ----
-![Guts](coolcooler-guts.webp)
+![Guts](coolcooler-guts.jpg)
 
 In this picture you can see 3 main circuits, from left to right:
 - LCD and buttons
